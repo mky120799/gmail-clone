@@ -4,13 +4,13 @@ import{ Menu as MenuIcon,Search, Tune, HelpOutlineOutlined, SettingsOutlined, Ap
 import { gmaillogo } from '../constants/constants';
 
 const StyledAppBar = styled(AppBar)({
-    background: '#F5F5F6',
+    background: '#F5F5F5',
     boxShadow:'none'
 })
 
 const SearchWrapper = styled(Box)({
     background: '#EAF1FB',
-    marginLeft:80 ,
+    marginLeft:65 ,
     borderRadius: 8,
     minWidth:790,
     maxWidth:820,
@@ -40,11 +40,15 @@ const OptionsWrapper = styled(Box)({
 
 
 
-const Header= () =>{
+
+
+
+
+const Header= ({toggleDrawer}) =>{
     return(
         <StyledAppBar position="static">
             <Toolbar>
-                 <MenuIcon color="action" />
+                 <MenuIcon color="action" onClick={toggleDrawer} />
                  <img src={gmaillogo} alt="logo" style={{Height: 125 ,width:125, marginLeft: 20}} />
                  <SearchWrapper>
                    
@@ -52,7 +56,7 @@ const Header= () =>{
                     <InputBase placeholder='Search in mail'/>
                     <Tune color="action"/>
                     
-                    </SearchWrapper>
+                 </SearchWrapper>
                     <OptionsWrapper>
                         <HelpOutlineOutlined color="action" />
                         <SettingsOutlined color="action" />
